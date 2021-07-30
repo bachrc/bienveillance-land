@@ -1,5 +1,6 @@
 pub enum Pronoun {
-    Feminine
+    Feminine,
+    Masculine,
 }
 
 pub struct Person {

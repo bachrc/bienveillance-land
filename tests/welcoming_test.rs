@@ -29,3 +29,13 @@ fn welcome_message_should_greet_female_pronouned_person() {
 
     assert_eq!(welcome_message, "Bonjour Camille Diplodocus ! Vous êtes pimpante aujourd'hui !")
 }
+
+#[test]
+fn welcome_message_should_greet_masculine_pronouned_person() {
+    let masculine_pronouned_person_to_welcome = Person::with_name_and_pronoun("Francis", "Croustagnolle", Pronoun::Masculine);
+
+    let welcomer = Welcomer;
+    let welcome_message = welcomer.compute_personnalized_message(&masculine_pronouned_person_to_welcome);
+
+    assert_eq!(welcome_message, "Bonjour Francis Croustagnolle ! Vous êtes pimpant aujourd'hui !")
+}
