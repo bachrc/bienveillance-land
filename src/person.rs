@@ -5,7 +5,7 @@ pub enum Pronoun {
 pub struct Person {
     first_name: String,
     last_name: String,
-    pub(crate) pronoun: Option<Pronoun>,
+    pub pronoun: Option<Pronoun>,
 }
 
 impl Person {
