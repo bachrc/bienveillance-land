@@ -8,8 +8,13 @@ impl Welcomer {
     }
 
     pub fn compute_personnalized_welcome_message(&self, person_to_welcome: &Person) -> String {
-        String::from(
-            format!("Bonjour {} ! Vous êtes pimpant.e aujourd'hui !", person_to_welcome.compute_display_name())
-        )
+        let welcome = format!("Bonjour {} !", person_to_welcome.compute_display_name());
+
+        let compliment = String::from(match person_to_welcome.pronoun {
+            None => "Vous êtes pimpant.e aujourd'hui !",
+            Some(_) => "Vous êtes pimpante aujourd'hui !"
+        });
+
+        format!("{} {}", welcome, compliment)
     }
 }
