@@ -1,4 +1,4 @@
-use crate::person::{Person, Pronoun};
+use crate::person::Person;
 use crate::smoothtalker::SmoothTalker;
 
 pub struct Welcomer {

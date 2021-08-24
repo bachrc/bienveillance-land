@@ -1,5 +1,4 @@
 use crate::person::{Person, Pronoun};
-use crate::smoothtalker::SentenceComponent::{Invariant, Variant};
 
 pub struct Sentence {
     pub components: Vec<SentenceComponent>,
@@ -38,21 +37,17 @@ impl SentenceComponent {
     }
 }
 
-pub struct SmoothTalker;
+pub trait ComplimentRepository {
+    fn fetch_compliment(&self) -> Sentence;
+}
+
+pub struct SmoothTalker {
+    pub compliment_repository: Box<dyn ComplimentRepository>,
+}
 
 impl SmoothTalker {
     pub fn compliment_person(&self, person: &Person) -> String {
-        let default_compliment = Sentence {
-            components: vec![
-                Invariant(String::from("Vous êtes")),
-                Variant {
-                    inclusive_form: String::from("pimpant·e"),
-                    masculine_form: String::from("pimpant"),
-                    feminine_form: String::from("pimpante"),
-                },
-                Invariant(String::from("aujourd'hui !"))
-            ]
-        };
+        let default_compliment = self.compliment_repository.fetch_compliment();
 
         default_compliment.display_sentence_for_pronouns(&person.pronoun)
     }
