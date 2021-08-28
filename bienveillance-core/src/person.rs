@@ -4,8 +4,8 @@ pub enum Pronoun {
 }
 
 pub struct Person {
-    first_name: String,
-    last_name: String,
+    pub first_name: String,
+    pub last_name: String,
     pub pronoun: Option<Pronoun>,
 }
 
