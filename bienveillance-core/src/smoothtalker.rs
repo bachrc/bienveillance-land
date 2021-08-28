@@ -48,6 +48,12 @@ pub struct SmoothTalker {
 }
 
 impl SmoothTalker {
+    pub fn new(compliment_repository: Box<dyn ComplimentRepository>) -> SmoothTalker {
+        SmoothTalker {
+            compliment_repository
+        }
+    }
+
     pub fn compliment_person(&self, person: &Person) -> String {
         let default_compliment = self.compliment_repository.fetch_compliment();
 

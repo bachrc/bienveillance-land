@@ -1,11 +1,17 @@
 use crate::person::Person;
-use crate::smoothtalker::SmoothTalker;
+use crate::smoothtalker::{SmoothTalker, ComplimentRepository};
 
 pub struct Welcomer {
     pub smooth_talker: SmoothTalker,
 }
 
 impl Welcomer {
+    pub fn new(compliment_repository: Box<dyn ComplimentRepository>) -> Welcomer {
+        Welcomer {
+            smooth_talker: SmoothTalker::new(compliment_repository)
+        }
+    }
+
     pub fn compute_default_message(&self) -> String {
         String::from("Bonjour !")
     }

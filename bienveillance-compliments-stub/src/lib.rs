@@ -1,4 +1,3 @@
-use bienveillance_core::compliment_repository::ComplimentRepository;
 use bienveillance_core::smoothtalker::{Sentence, ComplimentRepository};
 use bienveillance_core::smoothtalker::SentenceComponent::{Invariant, Variant};
 use rand::seq::SliceRandom;
