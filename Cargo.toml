@@ -1,2 +1,6 @@
 [workspace]
-members = ["bienveillance-core", "bienveillance-web"]
+members = [
+    "bienveillance-core",
+    "bienveillance-web",
+    "bienveillance-compliments-stub"
+]

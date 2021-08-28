@@ -1,5 +1,6 @@
 use crate::person::{Person, Pronoun};
 
+#[derive(Clone)]
 pub struct Sentence {
     pub components: Vec<SentenceComponent>,
 }
@@ -13,6 +14,7 @@ impl Sentence {
     }
 }
 
+#[derive(Clone)]
 pub enum SentenceComponent {
     Invariant(String),
     Variant {

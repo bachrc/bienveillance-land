@@ -1,0 +1,11 @@
+[package]
+name = "bienveillance-compliments-stub"
+version = "0.1.0"
+authors = ["bachrc <8.bachrc@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bienveillance-core = { path = "../bienveillance-core" }
+rand = "0.8.3"
